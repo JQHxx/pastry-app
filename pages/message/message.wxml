@@ -1,0 +1,26 @@
+<cu-custom bgColor="bg-yellow">
+  <view slot="content">私信</view>
+</cu-custom>
+
+<scroll-view scroll-y style="height:90vh;" refresher-enabled="true" refresher-threshold
+  refresher-triggered="{{trigger}}" bindrefresherrefresh="loadChatSnapshot">
+  <view class="cu-list menu-avatar">
+    <view class="cu-item solid-top" wx:for="{{chatSnapshot}}" wx:for-item="chat" wx:key="index">
+      <view class="cu-avatar round lg" style="background-image:url({{chat.avatar}});" bindtap="navToOther"
+        data-id="{{chat.id}}">
+      </view>
+      <view class="content" bindtap="navToChat" data-id="{{chat.id}}" bindtouchstart="bindTouchStart"
+        bindtouchend="bindTouchEnd" bindlongpress="deleteChat" data-index="{{index}}">
+        <view class="">
+          <text class="text-black">{{chat.nickname}}</text>
+        </view>
+        <view class="text-gray text-cut">{{chat.content}}</view>
+      </view>
+      <view class="action">
+        <!-- <view class="text-gray text-sm">{{chat.date}}</view> -->
+        <view wx:if="{{chat.unread >0}}" class="cu-tag round bg-red sm">{{chat.unread}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="cu-tabbar-height"></view>
+</scroll-view>

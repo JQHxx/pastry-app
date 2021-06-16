@@ -1,0 +1,9 @@
+var parse = function (jsonStr) {
+  if(jsonStr){
+    return JSON.parse(jsonStr);
+  }
+}
+
+module.exports = {
+  parse: parse
+}

@@ -1,0 +1,16 @@
+.cu-btn.sm {
+  font-size: 24rpx;
+}
+.cu-list.menu-avatar>.cu-item {
+  height: 120rpx;
+}
+.card{
+  border-radius: 10rpx;
+  margin: 10rpx;
+}
+.margin-left {
+  margin-left: 10rpx;
+}
+.list-empty {
+  padding-top: 100rpx;
+}

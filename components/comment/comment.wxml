@@ -1,0 +1,49 @@
+<!-- comment modal -->
+<view class="cu-modal bottom-modal text-left {{show ? 'show' : ''}} ">
+  <view class="cu-dialog bg-white">
+    <view class="cu-bar solids-bottom">
+      <view class="action">
+        <text class="text-gray text-df">最新评论</text>
+      </view>
+      <view class="action" bindtap="hideComment">
+        <text class="cuIcon-roundclosefill text-gray"></text>
+      </view>
+    </view>
+    <view style="height:75vh;">
+      <scroll-view scroll-y style="height:75vh;" refresher-enabled="true" refresher-threshold
+        refresher-triggered="{{trigger}}" bindrefresherrefresh="loadLatest" bindscrolltolower="loadPre">
+        <view class="cu-list menu-avatar comment bg-white">
+          <view class="cu-item" wx:for="{{list}}" wx:for-item="commentVO" wx:key="id">
+            <view class="cu-avatar round" style="background-image:url({{commentVO.replier.avatar}});"
+              bindtap="navToOther" data-id="{{commentVO.replier.id}}"></view>
+            <view class="content">
+              <view class="text-grey">{{commentVO.replier.nickname}}</view>
+              <view class="text-black text-content text-df" bindtap="setTarget" data-index="{{index}}"
+                hover-class="bg-gray light" bindtouchstart="bindTouchStart" bindtouchend="bindTouchEnd"
+                bindlongpress="deleteComment">
+                {{commentVO.content}}
+              </view>
+              <view wx:if="{{commentVO.commentCount >0}}" class="bg-gray light padding-sm radius margin-top-sm"
+                bindtap="navigate" data-index="{{index}}">
+                <view class="text-grey">共{{commentVO.commentCount}}条回复</view>
+              </view>
+              <view class="margin-top-sm">
+                <view class="text-gray text-sm">{{commentVO.createTime}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="cu-tabbar-height"></view>
+      </scroll-view>
+    </view>
+    <!-- 输入框 -->
+    <view class="cu-bar foot input {{InputBottom!=0?'cur':''}}" style="bottom:{{InputBottom}}px">
+      <input bindinput="count" bindfocus="InputFocus" bindblur="InputBlur" adjust-position="{{false}}" focus="{{focus}}"
+        maxlength="200" placeholder="回复 {{receiver.nickname}}:" value="{{empty}}" confirm-type="send"
+        bindconfirm="reply"></input>
+      <view class="text-gray text-sm">
+        <text class="{{words >200 ? 'text-red' : ''}}">{{words}}</text>/200
+      </view>
+    </view>
+  </view>
+</view>

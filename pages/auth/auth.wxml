@@ -1,0 +1,8 @@
+<view class="cover bg-yellow">
+  <view class="img-pos">
+    <image src="../../image/pastry.png" mode="aspectFit"></image>
+  </view>
+  <view class="btn-pos">
+    <button class="cu-btn lg round bg-white shadow" bindtap="authenticate">授权登录</button>
+  </view>
+</view>

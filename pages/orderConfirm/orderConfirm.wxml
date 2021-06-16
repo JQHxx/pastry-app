@@ -1,0 +1,54 @@
+<cu-custom bgColor="bg-yellow" isCustom="{{true}}">
+  <view slot="content">确认订单</view>
+</cu-custom>
+
+<view class="card margin-top bg-white">
+  <view class="cu-bar solid-bottom">
+    <view class="action">
+      <text class="">支付方式</text>
+    </view>
+  </view>
+  <radio-group class="block">
+    <view class="cu-form-group">
+      <view class="title">微信支付</view>
+      <radio class="radio" checked></radio>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">支付宝支付</view>
+      <radio class="radio" disabled></radio>
+    </view>
+  </radio-group>
+</view>
+
+<view class="card margin-top bg-white">
+  <view class="cu-bar solid-bottom ">
+    <view class="action">
+      <text class=""> 商品</text>
+    </view>
+  </view>
+  <view class="cu-list menu-avatar">
+    <view class="cu-item" wx:for="{{confirm.list}}" wx:key="id" wx:for-item="item">
+      <view class="cu-avatar radius lg" style="background-image:url({{item.product.thumbnail}});"></view>
+      <view class="content">
+        <view class="text-black">
+          <text>{{item.product.title}}</text>
+          <text class="text-gray text-sm">（{{item.product.subtitle}}）</text>
+        </view>
+        <view><text class="text-red text-price">{{item.product.price}}</text></view>
+      </view>
+      <view class="action">
+        <view>x{{item.count}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="flex justify-between padding solid-top">
+    <view>合计</view>
+    <view><text class="text-price text-red ">{{confirm.price}}</text></view>
+  </view>
+</view>
+
+<view class="cu-tabbar-height margin-top"></view>
+<view class="cu-bar bg-white foot">
+  <view class='action'>应付：<text class="text-xl text-red text-price">{{confirm.price}}</text></view>
+  <view class='bg-red submit' bindtap="pay">去支付</view>
+</view>

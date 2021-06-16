@@ -1,0 +1,5 @@
+<cu-custom bgColor="bg-yellow" isCustom="{{true}}">
+  <view slot="content">{{nickname}}的粉丝</view>
+</cu-custom>
+
+<follow id="follow" />

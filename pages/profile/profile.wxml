@@ -1,0 +1,33 @@
+<cu-custom bgColor="bg-yellow" isCustom="{{true}}">
+  <view slot="content">个人资料</view>
+</cu-custom>
+
+<form bindsubmit="save">
+  <view class="cu-form-group">
+    <view class="text-black">编辑个人资料</view>
+    <view class="">
+      <button class="cu-btn round bg-blue sm" form-type="submit">保存</button>
+    </view>
+  </view>
+  <view class="cu-form-group padding">
+    <image class="cu-avatar xl round" bindtap="editAvatar" src="{{avatar}}" mode="aspectFill">
+    </image>
+    <text class="cuIcon-camera xl text-gray margin-right" bindtap="editAvatar"></text>
+    <!-- <view class="cu-avatar xl round" bindtap="editAvatar" style="background-image:url('https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg');">
+      <text class="cuIcon-camera text-white"></text>
+    </view> -->
+  </view>
+  <view class="cu-form-group">
+    <view class="title">昵称</view>
+    <input maxlength="8" value="{{user.nickname}}" name="nickname" placeholder="修改昵称需花费5枚硬币"
+      placeholder-class="text-sm"></input>
+    <switch class="switch-sex grey" name="gender" checked="{{user.gender}}"></switch>
+  </view>
+  <view class="cu-form-group">
+    <view class="content padding-tb-sm">
+      <view class="title">个人简介</view>
+      <input maxlength="20" placeholder="用一句话介绍自己" placeholder-class="text-sm" value="{{user.profile}}"
+        name="profile"></input>
+    </view>
+  </view>
+</form>

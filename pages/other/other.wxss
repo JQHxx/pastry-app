@@ -1,0 +1,26 @@
+.background {
+  height: 400rpx;
+  display: flex;
+  justify-content: center;
+  padding-top: 100rpx;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 300;
+}
+
+.margin-top-sm {
+  margin-top: 10rpx;
+}
+
+.margin-top {
+  margin-top: 20rpx;
+}
+
+.text-xl {
+  font-size: 32rpx;
+}
+
+.cu-tag[class*="cuIcon-"] {
+  top: 95rpx;
+  right: 5rpx;
+}

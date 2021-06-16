@@ -1,0 +1,25 @@
+.cu-list.menu-avatar.comment>.cu-item {
+  padding: 20rpx 20rpx 20rpx 120rpx;
+  height: auto;
+}
+
+.card {
+  border-radius: 10rpx;
+  margin: 0rpx;
+}
+
+.margin-top-sm {
+  margin-top: 10rpx;
+}
+
+.cu-list.menu-avatar.comment>.cu-item {
+  padding: 20rpx 20rpx 10rpx 120rpx;
+}
+
+.text-content {
+  word-break: break-word;
+}
+
+.cu-card>.cu-item {
+  margin: 10rpx;
+}

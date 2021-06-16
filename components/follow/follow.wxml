@@ -1,0 +1,21 @@
+<!-- follow -->
+<scroll-view scroll-y style="height:90vh;" refresher-enabled="true" refresher-threshold
+  refresher-triggered="{{trigger}}" bindrefresherrefresh="loadLatest" bindscrolltolower="loadPre">
+  <view class="cu-list menu-avatar">
+    <view class="cu-item solid-bottom" wx:for="{{list}}" wx:key="id" wx:for-item="item">
+      <view class="cu-avatar round lg" style="background-image:url({{item.user.avatar}});" bindtap="navToOther" data-id="{{item.user.id}}">
+        <view class="cu-tag badge {{item.user.gender?'cuIcon-male bg-blue':'cuIcon-female bg-pink'}}"></view>
+      </view>
+      <view class="content">
+        <view class="">{{item.user.nickname}}</view>
+        <view class="text-gray text-sm flex">
+          <text class="text-cut">{{item.user.profile}}</text>
+        </view>
+      </view>
+      <view class="action">
+        <button class="cu-btn round sm {{item.follow ? 'line-gray' : 'line-yellow'}}" bindtap="follow"
+          data-index="{{index}}">{{item.follow ? '已关注' : '+关注'}}</button>
+      </view>
+    </view>
+  </view>
+</scroll-view>

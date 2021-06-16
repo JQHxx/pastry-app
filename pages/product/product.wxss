@@ -1,0 +1,19 @@
+.padding-sm {
+  padding: 5rpx;
+}
+.padding {
+  padding: 10rpx;
+}
+.cu-btn.sm {
+  font-size: 32rpx;
+}
+.cu-btn.lg {
+  font-size: 48rpx;
+}
+
+.foot {
+  position: fixed;
+  bottom: 40rpx;
+  right: 40rpx;
+  padding: 10rpx;
+}

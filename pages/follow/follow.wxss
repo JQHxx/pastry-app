@@ -1,0 +1,11 @@
+.cu-list.menu-avatar>.cu-item .action {
+  width: 120rpx;
+}
+.cu-btn.sm {
+  padding: 0 15rpx;
+  font-size: 23rpx;
+  height: 56rpx;
+}
+.empty {
+  padding-top: 100rpx;
+}

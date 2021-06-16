@@ -1,0 +1,26 @@
+@import "../../colorui/icon.wxss";
+@import "../../colorui/main.wxss";
+
+.text-left{
+  text-align: left;
+}
+
+.margin-top-sm {
+  margin-top: 10rpx;
+}
+
+.margin-right-sm {
+  margin-right: 10rpx;
+}
+
+.cu-list.menu-avatar.comment>.cu-item {
+  padding: 20rpx 20rpx 10rpx 120rpx;
+}
+
+.text-content {
+  word-break: break-word;
+}
+
+.cu-modal.bottom-modal .cu-dialog {
+  border-radius: 15rpx;
+}

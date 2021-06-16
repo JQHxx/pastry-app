@@ -1,0 +1,5 @@
+<cu-custom bgColor="bg-yellow">
+  <view slot="content">热门榜</view>
+</cu-custom>
+
+<blog id="blog" height="90" rank="true"/>

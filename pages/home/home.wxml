@@ -1,0 +1,5 @@
+<cu-custom bgColor="bg-yellow">
+  <view slot="content">酥饼 app</view>
+</cu-custom>
+
+<blog id="blog" height="90" />

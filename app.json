@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/auth/auth",
+    "pages/home/home",
+    "pages/my/my",
+    "pages/post/post",
+    "pages/profile/profile",
+    "pages/other/other",
+    "pages/cart/cart",
+    "pages/follow/follow",
+    "pages/fans/fans",
+    "pages/order/order",
+    "pages/orderConfirm/orderConfirm",
+    "pages/product/product",
+    "pages/message/message",
+    "pages/subComment/subComment",
+    "pages/myBlog/myBlog",
+    "pages/chat/chat",
+    "pages/discovery/discovery"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#39b54a",
+    "navigationBarTitleText": "酥饼",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "tabBar": {
+    "custom": true,
+    "list": [{
+        "pagePath": "pages/home/home"
+      },
+      {
+        "pagePath": "pages/discovery/discovery"
+      },
+      {
+        "pagePath": "pages/post/post"
+      },
+      {
+        "pagePath": "pages/message/message"
+      },
+      {
+        "pagePath": "pages/my/my"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "debug": true
+}

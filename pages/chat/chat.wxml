@@ -1,0 +1,42 @@
+<cu-custom bgColor="bg-yellow" isCustom="{{true}}">
+  <view slot="content">{{friend.nickname}}</view>
+</cu-custom>
+
+<!-- scroll-into-view="index{{list.length -1}}" -->
+<scroll-view scroll-y style="height:90vh;" refresher-enabled="true" refresher-threshold
+   refresher-triggered="{{trigger}}" bindrefresherrefresh="loadHistory"
+  bindscrolltolower="loadHistory">
+  <view class="cu-chat">
+    <view class="cu-item {{chat.type == 1 ? 'self' : ''}} " wx:for="{{list}}" wx:for-item="chat" wx:key="index" id="index{{index}}">
+      <!-- self -->
+      <view class="main" wx:if="{{chat.type ==1}}">
+        <view class="content bg-white shadow">
+          <text class="text-df">{{chat.content}}</text>
+        </view>
+      </view>
+      <view wx:if="{{chat.type ==1}}" class="cu-avatar radius" style="background-image:url({{user.avatar}});"></view>
+
+      <!-- friend -->
+      <view wx:if="{{chat.type ==2}}" class="cu-avatar radius" style="background-image:url({{friend.avatar}});">
+      </view>
+      <view class="main" wx:if="{{chat.type ==2}}">
+        <view class="content bg-yellow shadow">
+          <text class="text-df">{{chat.content}}</text>
+        </view>
+      </view>
+
+      <view class="date">{{chat.date}}</view>
+    </view>
+  </view>
+  <view class="cu-tabbar-height" id="index{{chatList.length -1}}"></view>
+</scroll-view>
+
+<!-- 输入框 -->
+<view class="cu-bar foot input {{InputBottom!=0?'cur':''}}" style="bottom:{{InputBottom}}px">
+  <input bindinput="count" bindfocus="InputFocus" bindblur="InputBlur" adjust-position="{{false}}" focus="{{focus}}"
+    maxlength="200" placeholder="回复 {{friend.nickname}}:" value="{{empty}}" confirm-type="send"
+    bindconfirm="reply"></input>
+  <view class="text-gray text-sm">
+    <text class="{{words >200 ? 'text-red' : ''}}">{{words}}</text>/200
+  </view>
+</view>

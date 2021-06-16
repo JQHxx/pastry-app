@@ -1,0 +1,28 @@
+<cu-custom bgColor="bg-yellow" isCustom="{{true}}">
+  <view slot="content">商品</view>
+</cu-custom>
+
+<!-- scrollView 暂时没必要做，商品数量太少 -->
+<view class="grid col-2 padding-sm">
+  <view class="padding-sm" wx:for="{{productList}}" wx:key="id" wx:for-item="product">
+    <view class="bg-white padding radius text-center">
+      <image src="{{product.thumbnail}}" mode="widthFix"></image>
+      <view class="text-left padding text-black">{{product.title}}
+        <text class="text-gray text-sm">({{product.subtitle}})</text>
+      </view>
+      <view class="text-left padding">
+        <view class="cu-tag round bg-blue light">上新</view>
+      </view>
+      <view class="flex justify-between padding">
+        <view class="text-price text-red text-xl">{{product.price}}</view>
+        <button class="cu-btn bg-yellow icon sm cuIcon-add" bindtap="addItem" data-index="{{index}}"></button>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="foot">
+  <button class="cu-btn icon lg bg-yellow" bindtap="navToCart">
+    <text class="cuIcon-cart"></text>
+  </button>
+</view>

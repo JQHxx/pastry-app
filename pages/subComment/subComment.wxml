@@ -1,0 +1,53 @@
+<cu-custom bgColor="bg-yellow" isCustom="{{true}}">
+  <view slot="content">评论详情</view>
+</cu-custom>
+<scroll-view scroll-y style="height:90vh;" refresher-enabled="true" refresher-threshold
+  refresher-triggered="{{trigger}}" bindrefresherrefresh="loadLatest" bindscrolltolower="loadPre">
+  <view class="cu-card dynamic card">
+    <view class="cu-item shadow">
+      <view class="cu-list menu-avatar comment">
+        <view class="cu-item solids-bottom">
+          <view class="cu-avatar round" style="background-image:url({{comment.replier.avatar}});" bindtap="navToOther"
+            data-id="{{comment.replier.id}}"></view>
+          <view class="content">
+            <view class="text-grey">{{comment.replier.nickname}}</view>
+            <view class="text-black text-content text-df">
+              {{comment.content}}
+            </view>
+            <view class="margin-top-sm">
+              <view class="text-gray text-sm">{{comment.createTime}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="cu-list menu-avatar comment">
+          <view class="cu-item" wx:for="{{list}}" wx:key="index" wx:for-item="subCommentVO">
+            <view class="cu-avatar round" style="background-image:url({{subCommentVO.replier.avatar}});"
+              bindtap="navToOther" data-id="{{subCommentVO.replier.id}}"></view>
+            <view class="content">
+              <view class="text-grey">{{subCommentVO.replier.nickname}}</view>
+              <view class="text-gray text-content text-df" bindtap="setTarget" data-index="{{index}}"
+                hover-class="bg-gray light" bindtouchstart="bindTouchStart" bindtouchend="bindTouchEnd"
+                bindlongpress="deleteComment">
+                回复 <text class="text-grey">@{{subCommentVO.receiver.nickname}} </text>
+                <text class="text-black">{{subCommentVO.content}}</text>
+              </view>
+              <view class="margin-top-sm">
+                <view class="text-gray text-sm">{{subCommentVO.createTime}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="cu-tabbar-height"></view>
+</scroll-view>
+<!-- 输入框 -->
+<view class="cu-bar foot input {{InputBottom!=0?'cur':''}}" style="bottom:{{InputBottom}}px">
+  <input bindinput="count" bindfocus="InputFocus" bindblur="InputBlur" adjust-position="{{false}}" focus="{{focus}}"
+    maxlength="200" placeholder="回复 {{receiver.nickname}}:" value="{{empty}}" confirm-type="send"
+    bindconfirm="reply"></input>
+  <view class="text-gray text-sm">
+    <text class="{{words >200 ? 'text-red' : ''}}">{{words}}</text>/200
+  </view>
+</view>

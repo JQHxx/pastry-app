@@ -1,0 +1,26 @@
+@import "../../colorui/icon.wxss";
+@import "../../colorui/main.wxss";
+
+.text-xl {
+  font-size: 30rpx;
+}
+
+.cu-card.dynamic>.cu-item>.text-content {
+  word-break: break-word;
+  max-height: none;
+  font-size: 28rpx;
+}
+
+.cu-btn.sm {
+  padding: 0 15rpx;
+  font-size: 23rpx;
+  height: 56rpx;
+}
+
+.cu-card>.cu-item {
+  margin: 10rpx;
+}
+
+.cu-tag {
+  font-size: 28rpx;
+}

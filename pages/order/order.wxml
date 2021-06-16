@@ -1,0 +1,52 @@
+<cu-custom bgColor="bg-yellow" isCustom="{{true}}">
+  <view slot="content">历史订单</view>
+</cu-custom>
+
+<scroll-view scroll-y style="height:90vh;" refresher-enabled="true" refresher-threshold
+  refresher-triggered="{{trigger}}" bindrefresherrefresh="loadLatest" bindscrolltolower="loadPre">
+  <view class="text-lg padding text-center list-empty" wx:if="{{list.length == 0}}">
+    <text class="text-grey"> 赶紧去下单吧~ </text>
+  </view>
+  <view class="card bg-white" wx:for="{{list}}" wx:key="id" wx:for-item="order">
+    <view class="cu-bar bg solid-bottom">
+      <view class="action">
+        <text class="text-bold" wx:if="{{order.status == 'UNPAID'}}">待支付</text>
+        <text class="text-bold" wx:if="{{order.status == 'MANUAL_CANCELED'}}">已取消</text>
+        <text class="text-bold" wx:if="{{order.status == 'AUTO_CANCELED'}}">已超时</text>
+        <text class="text-bold" wx:if="{{order.status == 'PAID'}}">已支付</text>
+        <text class="text-sm text-gray margin-left">{{order.createTime}}</text>
+      </view>
+      <view class="action">
+        <text class="text-gray text-sm">no：{{order.orderSn}}</text>
+      </view>
+    </view>
+    <view class="cu-list menu-avatar">
+      <view class="cu-item" wx:for="{{order.items}}" wx:key="productId" wx:for-item="item">
+        <view class="cu-avatar radius lg" style="background-image:url({{item.thumbnail}});"></view>
+        <view class="content">
+          <view class="text-black">
+            <text>{{item.title}}</text>
+            <text class="text-gray text-sm">（{{item.subtitle}}）</text>
+          </view>
+          <view class="text-red text-price">{{item.price}}</view>
+        </view>
+        <view class="action">
+          <view>x{{item.count}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="text-right padding-right">
+      实付：<text class="text-red text-lg text-price">{{order.totalPrice}}</text>
+    </view>
+    <view class="text-right padding" wx:if="{{order.status == 'PAID'}}">
+      <button class="cu-btn sm line-green">已完成</button>
+    </view>
+    <view class="text-right padding" wx:elif="{{order.status == 'UNPAID'}}">
+      <button class="cu-btn sm line-gray" bindtap="cancel" data-index="{{index}}">取消订单</button>
+      <button class="cu-btn sm line-red margin-left" bindtap="pay" data-index="{{index}}">去支付</button>
+    </view>
+    <view class="text-right padding" wx:else>
+      <button class="cu-btn sm line-gray">已取消</button>
+    </view>
+  </view>
+</scroll-view>

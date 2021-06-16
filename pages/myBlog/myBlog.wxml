@@ -1,0 +1,5 @@
+<cu-custom bgColor="bg-yellow" isCustom="{{true}}">
+  <view slot="content">我的动态</view>
+</cu-custom>
+
+<blog id="blog" height='90' personal='1' />

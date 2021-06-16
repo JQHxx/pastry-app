@@ -1,0 +1,20 @@
+.cu-form-group .title {
+  font-size: 28rpx;
+}
+
+.cu-form-group input {
+  font-size: 28rpx;
+}
+
+.cu-avatar.xl {
+  font-size: 1.8em;
+}
+
+.cu-btn.sm {
+  font-size: 23rpx;
+  height: 52rpx;
+}
+
+.content {
+  width: 100%
+}

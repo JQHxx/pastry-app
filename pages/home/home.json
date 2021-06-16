@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "blog": "../../components/blog/blog"
+  }
+}

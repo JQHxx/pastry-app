@@ -1,0 +1,43 @@
+<cu-custom isCustom="{{true}}" height="0" />
+
+<view class="background bg-yellow">
+  <view class="cu-avatar round xl" bindtap="navToProfile" style="background-image:url({{user.avatar}});">
+    <view class="cu-tag badge {{user.gender?'cuIcon-male bg-blue':'cuIcon-female bg-pink'}}"></view>
+  </view>
+  <view class="text-xl margin-top">
+    {{user.nickname}}
+  </view>
+  <view class="margin-top-sm">
+    简介：{{user.profile ? user.profile : '还没有简介'}}
+  </view>
+</view>
+
+<view class="padding flex text-center text-grey bg-white shadow-warp">
+  <view class="flex flex-sub flex-direction solid-right">
+    <view class="text-xl">{{statistic.blogCount}}</view>
+    <view class="margin-top-sm">
+      <text class="cuIcon-write text-cyan"></text> 创作</view>
+  </view>
+  <view class="flex flex-sub flex-direction solid-right" bindtap="navToFollow">
+    <view class="text-xl">{{statistic.followCount}}</view>
+    <view class="margin-top-sm">
+      <text class="cuIcon-friendfavor text-red"></text> 关注</view>
+  </view>
+  <view class="flex flex-sub flex-direction" bindtap="navToFans">
+    <view class="text-xl">{{statistic.fansCount}}</view>
+    <view class="margin-top-sm">
+      <text class="cuIcon-group text-green"></text> 粉丝</view>
+  </view>
+</view>
+
+<blog id="blog" height='75' personal='2' />
+
+<view class="cu-bar foot bg-white tabbar border">
+  <view class="bg-whit submit solids-right" hover-class="bg-gray" bindtap="navToChat">
+    <text class="cuIcon-message text-gray"> 私信</text>
+  </view>
+  <view class="btn-group submit">
+    <text wx:if="{{follow}}" class="text-gray" bindtap="follow">已关注</text>
+    <button wx:else class="cu-btn round bg-yellow shadow" bindtap="follow">+关注</button>
+  </view>
+</view>

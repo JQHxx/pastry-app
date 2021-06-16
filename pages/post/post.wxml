@@ -1,0 +1,37 @@
+<cu-custom bgColor="bg-yellow">
+	<view slot="content">发布动态</view>
+</cu-custom>
+
+<form bindsubmit="submit">
+	<view class="cu-form-group">
+		<textarea maxlength="500" placeholder="分享新鲜事..." name="content" auto-height="true" bindinput="count"
+			value="{{empty}}"></textarea>
+	</view>
+	<view class="text-right padding-right bg-white text-sm ">
+		<text class="{{words >500 ? 'text-red' : ''}}">{{words}}</text>/500
+	</view>
+	<view class="cu-bar bg-white">
+		<view class="action">
+			<text class="text-sm">选择图片</text>
+		</view>
+		<view class="action text-sm">
+			{{imgList.length}}/9
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="grid col-3 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="index" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<9}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+	<view class="padding flex flex-direction bg-white">
+		<button form-type="submit" class="cu-btn bg-yellow lg" disabled="{{words >500}}">发送</button>
+	</view>
+</form>

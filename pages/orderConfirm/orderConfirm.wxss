@@ -1,0 +1,21 @@
+.cu-form-group {
+  min-height: 90rpx;
+}
+
+.cu-form-group+.cu-form-group {
+  border-top: 0rpx;
+}
+
+.submit {
+  width: 200rpx;
+  align-self: stretch;
+  align-items: center;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.card{
+  border-radius: 10rpx;
+  margin: 10rpx;
+}

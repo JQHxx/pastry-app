@@ -1,0 +1,36 @@
+<cu-custom bgColor="bg-yellow" isCustom="{{true}}">
+  <view slot="content">购物车</view>
+</cu-custom>
+
+<view class="text-lg padding text-center cart-empty" wx:if="{{cart.length == 0}}">
+  <text class="text-grey"> 购物车是空的~ </text>
+</view>
+
+<view class="cu-list menu-avatar">
+  <view class="cu-item margin-bottom-sm" wx:for="{{cart}}" wx:key="product.id" wx:for-item="item">
+    <view class='checkbox' bindtap="check" data-index="{{index}}">
+      <checkbox class="round" checked="{{item.check}}"></checkbox>
+    </view>
+    <view class="cu-avatar radius lg" style="background-image:url({{item.product.thumbnail}});"></view>
+    <view class='content'>
+      <view>
+        <text>{{item.product.title}}</text>
+        <text class="text-gray text-sm">（{{item.product.subtitle}}）</text>
+      </view>
+      <view class='price-btn'>
+        <view class='text-red text-price'>{{item.product.price}}</view>
+        <view class='price-btn-incr'>
+          <button class='cu-btn' bindtap="decrease" data-index="{{index}}">-</button>
+          <view class='sum'>{{item.count}}</view>
+          <button class='cu-btn' bindtap="increase" data-index="{{index}}">+</button>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="cu-tabbar-height"></view>
+</view>
+
+<view class="cu-bar bg-white foot">
+  <view class='action'>合计：<text class="text-xl text-red text-price">{{total}}</text></view>
+  <view class='bg-green submit' bindtap="confirm">去下单</view>
+</view>

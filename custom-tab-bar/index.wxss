@@ -1,0 +1,17 @@
+@import "../colorui/icon.wxss";
+@import "../colorui/main.wxss";
+
+.text-yellow{
+  color: #fbbd08;
+}
+.text-gray{
+  color: #aaaaaa;
+}
+.bg-yellow{
+  background-color: #fbbd08;
+  color: #ffffff;
+}
+.bg-white {
+  background-color: #ffffff;
+  color: #666666;
+}

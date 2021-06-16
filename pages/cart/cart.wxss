@@ -1,0 +1,65 @@
+.margin-bottom-sm {
+  margin-bottom: 5rpx;
+}
+
+.cart-empty {
+  padding-top: 100rpx;
+}
+
+.cu-item .checkbox {
+  left: 30rpx;
+  position: absolute;
+}
+
+.cu-list.menu-avatar>.cu-item>.cu-avatar {
+  left: 100rpx;
+}
+
+.cu-list.menu-avatar>.cu-item .content {
+  left: 220rpx;
+  width: calc(100% - 96rpx - 30rpx - 120rpx);
+}
+
+.cu-item .price-btn {
+  position: relative;
+}
+
+.cu-item .price-btn-incr {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  border: 1px solid #D9D9D9;
+  border-radius: 2em;
+}
+
+.cu-item .cu-btn {
+  float: left;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  padding: 0px;
+  border-radius: 2em;
+  background-color: white;
+}
+
+.cu-item .sum {
+  float: left;
+  width: 32px;
+  height: 24px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 24px;
+  background-color: white;
+  border-left: 1px solid #D9D9D9;
+  border-right: 1px solid #D9D9D9;
+  min-height: 24px;
+}
+
+.submit {
+  width: 200rpx;
+  align-self: stretch;
+  align-items: center;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}

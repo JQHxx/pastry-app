@@ -1,0 +1,4 @@
+.text-df {
+  font-size: 28rpx;
+  word-break: break-word;
+}

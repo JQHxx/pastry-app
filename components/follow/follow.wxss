@@ -1,0 +1,18 @@
+@import "../../colorui/icon.wxss";
+@import "../../colorui/main.wxss";
+
+.cu-list.menu-avatar>.cu-item .action {
+  width: 120rpx;
+}
+
+.cu-btn.sm {
+  padding: 0 15rpx;
+  font-size: 23rpx;
+  height: 56rpx;
+}
+
+[class*="cuIcon-"] {
+  font-family: "cuIcon";
+  font-size: inherit;
+  font-style: normal;
+}

@@ -1,0 +1,17 @@
+<view wx:if="{{show}}" class="cu-bar tabbar bg-white shadow foot">
+  <view class="action {{index==0?'text-yellow':'text-gray'}}" bindtap="switchTab" data-cur="0">
+    <view class="cuIcon-home"></view> 首页
+  </view>
+  <view class="action {{index==1?'text-yellow':'text-gray'}}" bindtap="switchTab" data-cur="1">
+    <view class="cuIcon-rank"></view> 热门
+  </view>
+  <view class="action add-action" bindtap="switchTab" data-cur="2">
+    <button class="cu-btn cuIcon-add bg-yellow shadow"></button>
+  </view>
+  <view class="action {{index==3?'text-yellow':'text-gray'}}" bindtap="switchTab" data-cur="3">
+    <view class="cuIcon-mail"></view> 消息
+  </view>
+  <view class="action {{index==4?'text-yellow':'text-gray'}}" bindtap="switchTab" data-cur="4">
+    <view class="cuIcon-my"></view> 我的
+  </view>
+</view>
